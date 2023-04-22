@@ -3,7 +3,14 @@ import Link from "next/link";
 import img from "../../public/Images/logo.png";
 import Image from "next/image";
 import styles from "./Navbar.module.css"
+import { useRouter } from "next/router";
 const Navbar = () => {
+  const router = useRouter();
+
+  const isActive = (pathname) => {
+    return router.pathname === pathname ? 'active' : '';
+  };
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary shadow">
@@ -26,17 +33,17 @@ const Navbar = () => {
           <div className="collapse navbar-collapse row" id="navbarNav">
             <ul className="navbar-nav justify-content-end">
               <li className={`nav-itrem ${styles.navItems}`}>
-                <a className="nav-link active" aria-current="page" href="#">
+                <Link className={`nav-link ${isActive('/home')} ${isActive('/')}`} aria-current="page" href="/home">
                   Home
-                </a>
+                </Link>
               </li>
               <li className={`nav-itrem ${styles.navItems}`}>
-                <a className="nav-link" href="#">
+                <Link className={`nav-link ${isActive('/recipes')}`} href="/recipes">
                   Blog
-                </a>
+                </Link>
               </li>
               <li className={`nav-itrem ${styles.navItems}`}>
-                <a className="nav-link" href="#">
+                <a className={`nav-link ${isActive('/contact')}`} href="#">
                   Contact Us
                 </a>
               </li>
