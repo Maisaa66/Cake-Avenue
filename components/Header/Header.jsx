@@ -1,13 +1,18 @@
 import React from 'react';
 import Image from 'next/image';
-import cake from "../../public/Images/cakeCroped.jpg"
+import cake from "../../public/Images/cake.jpg";
+import styles from "./header.module.css";
+import Link from 'next/link';
 const Header = () => {
     return (
         <div className='position-relative'>
-            <Image src={cake} alt='cakeImage' style={{objectFit:"cover", maxWidth:"100%", height:"auto"}}></Image>
-            <div className='position-absolute start-50 translate-middle' style={{top:"20%"}}>
-            <p style={{font}}>A Sweet Escape from the Everyday</p>
-            <button className='btn btn-outline-danger  fs-5' style={{fontFamily:"var(--textFont)"}}>Explore Receipes</button>
+            <div className={`${styles.imgDiv}`}>
+            <Image src={cake} alt='cakeImage' style={{objectFit:"cover", maxWidth:"100%"}}></Image>
+
+            </div>
+            <div className='position-absolute start-50 translate-middle d-flex flex-column align-items-center' style={{top:"15%"}}>
+            <p style={{fontFamily:"var(--headerFont)"}} className='text-center fs-1 fw-bold'>A Sweet Escape from the Everyday</p>
+            <Link href="/recipes" className='btn btn-outline-danger fw-bold' style={{fontFamily:"var(--textFont)"}}>Explore Receipes</Link>
             </div>
         </div>
     );
