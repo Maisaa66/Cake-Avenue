@@ -31,7 +31,7 @@ const Navbar = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse row" id="navbarNav">
-            <ul className="navbar-nav justify-content-end">
+            <ul className="navbar-nav justify-content-center">
               <li className={`nav-itrem ${styles.navItems}`}>
                 <Link className={`nav-link ${isActive('/home')} ${isActive('/')}`} aria-current="page" href="/home">
                   Home
@@ -48,6 +48,11 @@ const Navbar = () => {
                 </a>
               </li>
             </ul>
+          </div>
+          <div className="d-flex justify-content-evenly">
+            <Link className="btn btn-danger mx-2" style={{borderRadius:"20px"}} href="#">Sign up</Link>
+            <Link className="btn btn-outline-danger" href="#" style={{borderRadius:"20px"}}>Login</Link>
+
           </div>
         </div>
       </nav>
