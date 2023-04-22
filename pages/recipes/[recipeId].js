@@ -7,6 +7,7 @@ import {
   faBowlFood,
 } from "@fortawesome/free-solid-svg-icons";
 import styles from "./reciepeDetail.module.css";
+
 const RecipeDetail = ({ dessert }) => {
   const [activeTab, setActiveTab] = useState("Ingreident");
   const handleActiveTab = (tab) => {
@@ -59,20 +60,20 @@ const RecipeDetail = ({ dessert }) => {
             {dessert.description}
           </p>
           <div
-            className="card w-75 m-auto border-none "
+            className="card w-75 m-auto border-none mt-5"
             // style={{ top: "50%" }}
           >
-            <div className="card-body">
+            <div className="card-body text-dark">
               <div className="container">
                 <div className="row">
-                  <div className="col-md-4 col-sm-12 d-flex flex-column align-items-center mb-5">
+                  <div className="col-md-4 col-sm-6 d-flex flex-column align-items-center mb-5">
                     <FontAwesomeIcon
                       icon={faClock}
                       style={{ color: "#a10812", height: "22px" }}
                     />
                     <div>{dessert.prep_time}</div>
                   </div>
-                  <div className="col-md-4 col-sm-12  d-flex flex-column align-items-center  mb-5">
+                  <div className="col-md-4 col-sm-6  d-flex flex-column align-items-center  mb-5">
                     <FontAwesomeIcon
                       icon={faKitchenSet}
                       style={{ color: "#a10812", height: "22px" }}
@@ -88,9 +89,9 @@ const RecipeDetail = ({ dessert }) => {
                     <div>{dessert.servings}</div>
                   </div>
                 </div>
-                <div className="row">
+                <div className="row text-dark">
                   <div
-                    className={`col-6 text-center fs-3 fw-bold`}
+                    className={`col-md-6 col-sm-12 text-center fs-5 fw-bold mb-3`}
                     style={{ fontFamily: "var(--textFont)", cursor: "pointer" }}
                     onClick={() => {
                       handleActiveTab("Ingreident");
@@ -107,14 +108,14 @@ const RecipeDetail = ({ dessert }) => {
                     </span>
                   </div>
                   <div
-                    className="col-6 text-center fs-3 fw-bold"
+                    className="col-md-6 col-sm-12 text-center fs-5 fw-bold"
                     style={{ fontFamily: "var(--textFont)", cursor: "pointer" }}
                     onClick={() => {
                       handleActiveTab("Instructions");
                     }}
                   >
                     <span
-                      className={`px-3 py-1 ${
+                      className={`px-3 py-1  ${
                         activeTab === "Instructions"
                           ? styles.active
                           : styles.toggle
@@ -124,11 +125,10 @@ const RecipeDetail = ({ dessert }) => {
                     </span>
                   </div>
                 </div>
-                <div className="row justify-content-center">
-                  {" "}
-                  <div class="card " style={{ width: "80%" }}>
-                    <ul class="list-group list-group-flush">
-                      {activeTab === "Ingerdient"
+                <div className={`row justify-content-center mt-5 ${styles.row}`} >
+                  <div class="card " style={{ width: "80%" }} >
+                    <ul class="list-group list-group-flush " >
+                      {activeTab === "Ingreident"
                         ? dessert.ingredients.map((ing, index) => (
                             <li class="list-group-item" key={index}>
                               {ing}
@@ -142,6 +142,8 @@ const RecipeDetail = ({ dessert }) => {
                     </ul>
                   </div>
                 </div>
+
+                
               </div>
             </div>
           </div>

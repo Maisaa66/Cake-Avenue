@@ -1,7 +1,7 @@
 {
     "desserts": [
         {
-            "id":"1",
+            "id": "1",
             "name": "Chocolate Cake",
             "description": "A rich and decadent chocolate cake, perfect for any occasion.",
             "ingredients": [
@@ -27,7 +27,7 @@
             "servings": "12"
         },
         {
-            "id":"2",
+            "id": "2",
             "name": "Apple Pie",
             "description": "A classic apple pie with a flaky crust and sweet, cinnamon-spiced filling.",
             "ingredients": [
@@ -56,7 +56,7 @@
             "servings": "12"
         },
         {
-            "id":"3",
+            "id": "3",
             "name": "Strawberry Shortcake",
             "description": "A light and fluffy sponge cake layered with sweet strawberries and whipped cream.",
             "ingredients": [
@@ -87,50 +87,19 @@
             "servings": "12"
         },
         {
-            "id":"4",
+            "id": "4",
             "name": "Banana Bread",
             "description": "A moist and flavorful bread made with ripe bananas and warm spices.",
             "ingredients": [
-                {
-                    "name": "flour",
-                    "amount": "2 cups"
-                },
-                {
-                    "name": "baking soda",
-                    "amount": "1 tsp"
-                },
-                {
-                    "name": "salt",
-                    "amount": "1/2 tsp"
-                },
-                {
-                    "name": "cinnamon",
-                    "amount": "1 tsp"
-                },
-                {
-                    "name": "nutmeg",
-                    "amount": "1/4 tsp"
-                },
-                {
-                    "name": "sugar",
-                    "amount": "1 cup"
-                },
-                {
-                    "name": "eggs",
-                    "amount": "2"
-                },
-                {
-                    "name": "butter",
-                    "amount": "1/2 cup"
-                },
-                {
-                    "name": "bananas",
-                    "amount": "3"
-                },
-                {
-                    "name": "vanilla extract",
-                    "amount": "1 tsp"
-                }
+                "2 cups all-purpose flour",
+                "1 teaspoon baking soda",
+                "¼ teaspoon salt",
+                "½ cup unsalted butter, softened",
+                "1 cup granulated sugar",
+                "2 large eggs",
+                "1 cup mashed ripe bananas (about 2 medium bananas)",
+                "½ cup plain Greek yogurt",
+                "1 teaspoon vanilla extract"
             ],
             "instructions": [
                 "Preheat the oven to 350°F.",
@@ -144,7 +113,7 @@
             "servings": "12"
         },
         {
-            "id":"5",
+            "id": "5",
             "name": "Red Velvet Cupcakes",
             "description": "Moist and fluffy red velvet cupcakes topped with cream cheese frosting.",
             "ingredients": [
@@ -183,7 +152,7 @@
             "servings": "12"
         },
         {
-            "id":"6",
+            "id": "6",
             "name": "Glazed Donuts",
             "description": "Classic fried donuts with a sweet glaze.",
             "ingredients": [
@@ -220,35 +189,34 @@
             "servings": "12"
         },
         {
-            "id":"7",
+            "id": "7",
             "name": "Classic Tiramisu",
             "description": "A traditional Italian dessert made with layers of espresso-soaked ladyfingers and mascarpone cream.",
             "ingredients": [
-               "6 egg yolks",
-               "3/4 cup white sugar",
-               "2/3 cup milk",
-               "1 1/4 cups heavy cream",
-               "1/2 teaspoon vanilla extract",
-               "1 pound mascarpone cheese",
-               "1/4 cup strong brewed coffee",
-               "2 tablespoons rum",
-               "24 ladyfingers",
-               "1/4 cup unsweetened cocoa powder"
+                "6 egg yolks",
+                "3/4 cup white sugar",
+                "2/3 cup milk",
+                "1 1/4 cups heavy cream",
+                "1/2 teaspoon vanilla extract",
+                "1 pound mascarpone cheese",
+                "1/4 cup strong brewed coffee",
+                "2 tablespoons rum",
+                "24 ladyfingers",
+                "1/4 cup unsweetened cocoa powder"
             ],
             "instructions": [
-               "In a medium saucepan, whisk together egg yolks and sugar until well blended. Whisk in milk and cook over low heat, stirring constantly, until mixture thickens and coats the back of a spoon. Remove from heat and let cool.",
-               "In a large bowl, beat heavy cream with vanilla until soft peaks form. Add mascarpone cheese and beat until smooth.",
-               "In a small bowl, combine coffee and rum. Dip each ladyfinger into the coffee mixture, soaking them briefly on both sides, and layer them on the bottom of a 9x13 inch dish.",
-               "Spread half of the mascarpone mixture over the ladyfingers, then repeat with another layer of soaked ladyfingers and remaining mascarpone mixture.",
-               "Cover and refrigerate for at least 2 hours, or overnight.",
-               "Before serving, sprinkle cocoa powder over the top of the tiramisu.",
-               "Enjoy!"
+                "In a medium saucepan, whisk together egg yolks and sugar until well blended. Whisk in milk and cook over low heat, stirring constantly, until mixture thickens and coats the back of a spoon. Remove from heat and let cool.",
+                "In a large bowl, beat heavy cream with vanilla until soft peaks form. Add mascarpone cheese and beat until smooth.",
+                "In a small bowl, combine coffee and rum. Dip each ladyfinger into the coffee mixture, soaking them briefly on both sides, and layer them on the bottom of a 9x13 inch dish.",
+                "Spread half of the mascarpone mixture over the ladyfingers, then repeat with another layer of soaked ladyfingers and remaining mascarpone mixture.",
+                "Cover and refrigerate for at least 2 hours, or overnight.",
+                "Before serving, sprinkle cocoa powder over the top of the tiramisu.",
+                "Enjoy!"
             ],
-            "image":"https://previews.123rf.com/images/olbann/olbann1803/olbann180300020/96866955-homemade-tiramisu-cake-italian-dessert.jpg",
+            "image": "https://previews.123rf.com/images/olbann/olbann1803/olbann180300020/96866955-homemade-tiramisu-cake-italian-dessert.jpg",
             "prep_time": "30 minutes",
             "cook_time": "10 minutes",
             "servings": "12"
-         }
-         
+        }
     ]
 }

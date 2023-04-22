@@ -6,3 +6,18 @@
     border-bottom: 5px solid #a1081266;
 }
 
+.row {
+    height: 40vh;
+    overflow: auto;
+  }
+  
+  .list-group {
+    margin-bottom: 0;
+  }
+  
+  @media (max-width: 576px) {
+    .row {
+      overflow: auto;
+    }
+  }
+  
