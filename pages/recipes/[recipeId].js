@@ -126,16 +126,16 @@ const RecipeDetail = ({ dessert }) => {
                   </div>
                 </div>
                 <div className={`row justify-content-center mt-5 ${styles.row}`} >
-                  <div class="card " style={{ width: "80%" }} >
-                    <ul class="list-group list-group-flush " >
+                  <div className="card " style={{ width: "80%" }} >
+                    <ul className="list-group list-group-flush " >
                       {activeTab === "Ingreident"
                         ? dessert.ingredients.map((ing, index) => (
-                            <li class="list-group-item" key={index}>
+                            <li className="list-group-item" key={index}>
                               {ing}
                             </li>
                           ))
                         : dessert.instructions.map((ins, index) => (
-                            <li class="list-group-item" key={index}>
+                            <li className="list-group-item" key={index}>
                               {ins}
                             </li>
                           ))}
@@ -154,24 +154,43 @@ const RecipeDetail = ({ dessert }) => {
 };
 
 export default RecipeDetail;
-export async function getStaticPaths() {
-  return {
-    paths: [
-      { params: { recipeId: "1" } },
-      { params: { recipeId: "2" } },
-      { params: { recipeId: "3" } },
-    ],
-    fallback: "blocking",
-  };
-}
+// export async function getStaticPaths() {
+//   return {
+//     paths: [
+//       { params: { recipeId: "1" } },
+//       { params: { recipeId: "2" } },
+//       { params: { recipeId: "3" } },
+//     ],
+//     fallback: "blocking",
+//   };
+// }
 
-export async function getStaticProps(context) {
+// export async function getStaticProps(context) {
+//   const { params } = context;
+//   const res = await fetch(`http://localhost:4000/desserts/${params.recipeId}`);
+//   const data = await res.json();
+//   return {
+//     props: {
+//       dessert: data,
+//     },
+//   };
+// }
+
+export async function getServerSideProps(context) {
   const { params } = context;
-  const res = await fetch(`http://localhost:4000/desserts/${params.recipeId}`);
+  const { recipeId } = params;
+  
+  const res = await fetch(`http://localhost:4000/desserts/${recipeId}`);
+  if (!res.ok) {
+    // handle the case where the dessert is not found
+    return { notFound: true };
+  }
   const data = await res.json();
+
   return {
     props: {
       dessert: data,
     },
   };
 }
+
