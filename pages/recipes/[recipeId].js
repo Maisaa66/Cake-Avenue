@@ -69,14 +69,14 @@ const RecipeDetail = ({ dessert }) => {
                   <div className="col-md-4 col-sm-6 d-flex flex-column align-items-center mb-5">
                     <FontAwesomeIcon
                       icon={faClock}
-                      style={{ color: "#a10812", height: "22px" }}
+                      style={{ color: "#dc3545", height: "22px" }}
                     />
                     <div>{dessert.prep_time}</div>
                   </div>
                   <div className="col-md-4 col-sm-6  d-flex flex-column align-items-center  mb-5">
                     <FontAwesomeIcon
                       icon={faKitchenSet}
-                      style={{ color: "#a10812", height: "22px" }}
+                      style={{ color: "#dc3545", height: "22px" }}
                     />
                     <div>{dessert.cook_time}</div>
                   </div>
@@ -84,7 +84,7 @@ const RecipeDetail = ({ dessert }) => {
                   <div className="col-md-4 col-sm-12 d-flex flex-column align-items-center">
                     <FontAwesomeIcon
                       icon={faBowlFood}
-                      style={{ color: "#a10812", height: "22px" }}
+                      style={{ color: "#dc3545", height: "22px" }}
                     />
                     <div>{dessert.servings}</div>
                   </div>

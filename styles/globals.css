@@ -3,7 +3,8 @@
 :root{
   --headerFont:'Dancing Script', cursive;
   --textFont: 'Ysabeau', sans-serif;
-  --mainColor:#a10812;
+  /* --mainColor:#a10812; */
+  --mainColor:#dc3545;
   --secondaryColor: #fffefe;
 }
 
