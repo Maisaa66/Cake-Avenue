@@ -10,7 +10,7 @@ const Header = () => {
             <Image src={cake} alt='cakeImage' style={{objectFit:"cover", maxWidth:"100%"}}></Image>
 
             </div>
-            <div className='position-absolute start-50 translate-middle d-flex flex-column align-items-center' style={{top:"15%"}}>
+            <div className='position-absolute start-50 translate-middle d-flex flex-column align-items-center mt-2' style={{top:"15%"}}>
             <p style={{fontFamily:"var(--headerFont)"}} className='text-center fs-1 fw-bold'>A Sweet Escape from the Everyday</p>
             <Link href="/recipes" className='btn btn-outline-danger fw-bold' style={{fontFamily:"var(--textFont)"}}>Explore Receipes</Link>
             </div>

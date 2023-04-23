@@ -50,8 +50,8 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="d-flex justify-content-evenly">
-            <Link className="btn btn-danger mx-2" style={{borderRadius:"20px"}} href="#">Sign up</Link>
-            <Link className="btn btn-outline-danger" href="#" style={{borderRadius:"20px"}}>Login</Link>
+            <Link className="btn btn-danger mx-2" style={{borderRadius:"20px"}} href="/signup">Sign up</Link>
+            <Link className="btn btn-outline-danger" href="/login" style={{borderRadius:"20px"}}>Login</Link>
 
           </div>
         </div>
