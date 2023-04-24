@@ -1,7 +1,7 @@
 export const desserts =  [
     {
         "id": "1",
-        "title": "Chocolate Cake",
+        "name": "Chocolate Cake",
         "description": "A rich and decadent chocolate cake, perfect for any occasion.",
         "ingredients": [
             "1/2 cup unsalted butter",
@@ -27,7 +27,7 @@ export const desserts =  [
     },
     {
         "id": "2",
-        "title": "Apple Pie",
+        "name": "Apple Pie",
         "description": "A classic apple pie with a flaky crust and sweet, cinnamon-spiced filling.",
         "ingredients": [
             "1 recipe pastry for a 9-inch double crust pie",
@@ -56,7 +56,7 @@ export const desserts =  [
     },
     {
         "id": "3",
-        "title": "Strawberry Shortcake",
+        "name": "Strawberry Shortcake",
         "description": "A light and fluffy sponge cake layered with sweet strawberries and whipped cream.",
         "ingredients": [
             "1 cup all-purpose flour",
@@ -87,7 +87,7 @@ export const desserts =  [
     },
     {
         "id": "4",
-        "title": "Banana Bread",
+        "name": "Banana Bread",
         "description": "A moist and flavorful bread made with ripe bananas and warm spices.",
         "ingredients": [
             "2 cups all-purpose flour",
@@ -113,7 +113,7 @@ export const desserts =  [
     },
     {
         "id": "5",
-        "title": "Red Velvet Cupcakes",
+        "name": "Red Velvet Cupcakes",
         "description": "Moist and fluffy red velvet cupcakes topped with cream cheese frosting.",
         "ingredients": [
             "2 1/2 cups all-purpose flour",
@@ -152,7 +152,7 @@ export const desserts =  [
     },
     {
         "id": "6",
-        "title": "Glazed Donuts",
+        "name": "Glazed Donuts",
         "description": "Classic fried donuts with a sweet glaze.",
         "ingredients": [
             "3 cups all-purpose flour",
@@ -189,7 +189,7 @@ export const desserts =  [
     },
     {
         "id": "7",
-        "title": "Classic Tiramisu",
+        "name": "Classic Tiramisu",
         "description": "A traditional Italian dessert made with layers of espresso-soaked ladyfingers and mascarpone cream.",
         "ingredients": [
             "6 egg yolks",

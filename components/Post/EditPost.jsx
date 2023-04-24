@@ -1,13 +1,14 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-
-
+import { useRouter } from "next/router";
 const EditPost = (props) => {
 
     const {dessertId} = props
 
     const [recipe, setRecipe] = useState({});
+
+    const router = useRouter();
 
     async function getDessert (){
       const response =  await axios.get(`/api/desserts/${dessertId}`);
@@ -16,7 +17,8 @@ const EditPost = (props) => {
 
     useEffect(()=>{
         getDessert();
-    }, [])
+        console.log(recipe);
+    },[])
 
 
     
@@ -25,23 +27,23 @@ const EditPost = (props) => {
         setRecipe({ ...recipe, [name]: value });
       };
 
-      const editRecipe = () => {
-        console.log(recipe);
-        axios.put("/api/desserts", recipe);
+      const editRecipe = async () => {
+        console.log("before put ",recipe);
+        await axios.patch(`/api/desserts/${dessertId}`, recipe);
       };
     
       return (
-        <div class="card m-auto mt-3" style={{ width: "40rem" }}>
-          <div class="card-body">
+        <div className="card m-auto mt-3" style={{ width: "40rem" }}>
+          <div className="card-body">
             <h5
-              class="card-title fs-1 mb-3"
+              className="card-title fs-1 mb-3"
               style={{ fontFamily: "var(--textFont)" }}
             >
               Create Recipe
             </h5>
-            <div class="mb-3">
+            <div className="mb-3">
               <h6
-                class="card-subtitle mb-2 text-body-secondary"
+                className="card-subtitle mb-2 text-body-secondary"
                 style={{ fontFamily: "var(--textFont)" }}
               >
                 Recipe Title
@@ -49,16 +51,16 @@ const EditPost = (props) => {
     
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="exampleFormControlInput1"
-                name="title"
+                name="name"
                 value={recipe.name}
                 onChange={handleChange}
               />
             </div>
-            <div class="mb-3">
+            <div className="mb-3">
               <h6
-                class="card-subtitle mb-2 text-body-secondary"
+                className="card-subtitle mb-2 text-body-secondary"
                 style={{ fontFamily: "var(--textFont)" }}
               >
                 Description
@@ -66,16 +68,16 @@ const EditPost = (props) => {
     
               <textarea
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="exampleFormControlInput1"
                 name="description"
                 value={recipe.description}
                 onChange={handleChange}
               />
             </div>
-            <div class="mb-3">
+            <div className="mb-3">
               <h6
-                class="card-subtitle mb-2 text-body-secondary"
+                className="card-subtitle mb-2 text-body-secondary"
                 style={{ fontFamily: "var(--textFont)" }}
               >
                 Ingredients
@@ -83,7 +85,7 @@ const EditPost = (props) => {
     
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="exampleFormControlInput1"
                 placeholder="Seperate your ingredients with comma (,)"
                 name="ingredients"
@@ -91,9 +93,9 @@ const EditPost = (props) => {
                 onChange={handleChange}
               />
             </div>
-            <div class="mb-3">
+            <div className="mb-3">
               <h6
-                class="card-subtitle mb-2 text-body-secondary"
+                className="card-subtitle mb-2 text-body-secondary"
                 style={{ fontFamily: "var(--textFont)" }}
               >
                 Instructions
@@ -101,7 +103,7 @@ const EditPost = (props) => {
     
               <textarea
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="exampleFormControlInput1"
                 placeholder="Seperate your ingredients with comma (,)"
                 name="instructions"
@@ -109,9 +111,9 @@ const EditPost = (props) => {
                 onChange={handleChange}
               />
             </div>
-            <div class="mb-3">
+            <div className="mb-3">
               <h6
-                class="card-subtitle mb-2 text-body-secondary"
+                className="card-subtitle mb-2 text-body-secondary"
                 style={{ fontFamily: "var(--textFont)" }}
               >
                 Image
@@ -119,7 +121,7 @@ const EditPost = (props) => {
     
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="exampleFormControlInput1"
                 placeholder="Enter image URL"
                 name="image"
@@ -127,10 +129,10 @@ const EditPost = (props) => {
                 onChange={handleChange}
               />
             </div>
-            <div class="mb-3 d-flex justify-content-between">
+            <div className="mb-3 d-flex justify-content-between">
               <div className="col-3">
                 <h6
-                  class="card-subtitle mb-2 text-body-secondary"
+                  className="card-subtitle mb-2 text-body-secondary"
                   style={{ fontFamily: "var(--textFont)" }}
                 >
                   Prepration time
@@ -138,7 +140,7 @@ const EditPost = (props) => {
     
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   id="exampleFormControlInput1"
                   name="prep_time"
                   value={recipe.prep_time}
@@ -147,7 +149,7 @@ const EditPost = (props) => {
               </div>
               <div className="col-3">
                 <h6
-                  class="card-subtitle mb-2 text-body-secondary"
+                  className="card-subtitle mb-2 text-body-secondary"
                   style={{ fontFamily: "var(--textFont)" }}
                 >
                   Cook time
@@ -155,7 +157,7 @@ const EditPost = (props) => {
     
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   id="exampleFormControlInput1"
                   name="cook_time"
                   value={recipe.cook_time}
@@ -164,7 +166,7 @@ const EditPost = (props) => {
               </div>
               <div className="col-3">
                 <h6
-                  class="card-subtitle mb-2 text-body-secondary"
+                  className="card-subtitle mb-2 text-body-secondary"
                   style={{ fontFamily: "var(--textFont)" }}
                 >
                   Servings Plates
@@ -172,7 +174,7 @@ const EditPost = (props) => {
     
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   id="exampleFormControlInput1"
                   name="servings"
                   value={recipe.servings}

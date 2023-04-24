@@ -47,7 +47,7 @@ const PostCard = () => {
             type="text"
             class="form-control"
             id="exampleFormControlInput1"
-            name="title"
+            name="name"
             value={recipe.name}
             onChange={handleChange}
           />

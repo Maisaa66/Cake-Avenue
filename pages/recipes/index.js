@@ -13,10 +13,12 @@ import Link from "next/link";
 
 const index = () => {
   const [desserts, setDesserts] = useState([]);
+
   async function fetchData() {
     const response = await axios.get("/api/desserts");
     setDesserts(response.data);
   }
+
   const deleteRecipe = async (dessertId) => {
     await axios
       .delete(`/api/desserts/${dessertId}`)
@@ -28,7 +30,7 @@ const index = () => {
   };
   useEffect(() => {
     fetchData();
-  }, []);
+  },[]);
 
   return (
     <div>
