@@ -12,7 +12,7 @@ const Signup = () => {
             <div className="card-body">
               <form>
                 <div className="mb-3">
-                  <label htmlFor="exampleInputEmail1" className="form-label">
+                  <label htmlFor="exampleInputEmail1" className="form-label fw-bold" style={{fontFamily:"var(--textFont)"}}>
                     Fullname
                   </label>
                   <input
@@ -23,7 +23,7 @@ const Signup = () => {
                   />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="exampleInputEmail1" className="form-label">
+                  <label htmlFor="exampleInputEmail1" className="form-label fw-bold" style={{fontFamily:"var(--textFont)"}}>
                     Email address
                   </label>
                   <input
@@ -32,12 +32,12 @@ const Signup = () => {
                     id="exampleInputEmail1"
                     aria-describedby="emailHelp"
                   />
-                  <div id="emailHelp" className="form-text">
+                  <div id="emailHelp" className="form-text " style={{fontFamily:"var(--textFont)"}}>
                     Well never share your email with anyone else.
                   </div>
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="exampleInputPassword1" className="form-label">
+                  <label htmlFor="exampleInputPassword1" className="form-label fw-bold" style={{fontFamily:"var(--textFont)"}}>
                     Password
                   </label>
                   <input
@@ -47,7 +47,7 @@ const Signup = () => {
                   />
                 </div>
 
-                <button type="submit" className="btn btn-danger">
+                <button type="submit" className="btn btn-danger " style={{fontFamily:"var(--textFont)"}}>
                   Signup
                 </button>
               </form>
