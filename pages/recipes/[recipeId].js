@@ -7,6 +7,7 @@ import {
   faBowlFood,
 } from "@fortawesome/free-solid-svg-icons";
 import styles from "./reciepeDetail.module.css";
+import axios from "axios";
 
 const RecipeDetail = ({ dessert }) => {
   const [activeTab, setActiveTab] = useState("Ingreident");
@@ -125,9 +126,11 @@ const RecipeDetail = ({ dessert }) => {
                     </span>
                   </div>
                 </div>
-                <div className={`row justify-content-center mt-5 ${styles.row}`} >
-                  <div className="card " style={{ width: "80%" }} >
-                    <ul className="list-group list-group-flush " >
+                <div
+                  className={`row justify-content-center mt-5 ${styles.row}`}
+                >
+                  <div className="card " style={{ width: "80%" }}>
+                    <ul className="list-group list-group-flush ">
                       {activeTab === "Ingreident"
                         ? dessert.ingredients.map((ing, index) => (
                             <li className="list-group-item" key={index}>
@@ -142,8 +145,6 @@ const RecipeDetail = ({ dessert }) => {
                     </ul>
                   </div>
                 </div>
-
-                
               </div>
             </div>
           </div>
@@ -176,21 +177,32 @@ export default RecipeDetail;
 //   };
 // }
 
+// export async function getServerSideProps(context) {
+//   const { params } = context;
+//   const { recipeId } = params;
+
+//   const res = await fetch(`http://localhost:4000/desserts/${recipeId}`);
+//   if (!res.ok) {
+//     // handle the case where the dessert is not found
+//     return { notFound: true };
+//   }
+//   const data = await res.json();
+
+//   return {
+//     props: {
+//       dessert: data,
+//     },
+//   };
+// }
+
 export async function getServerSideProps(context) {
   const { params } = context;
   const { recipeId } = params;
-  
-  const res = await fetch(`http://localhost:4000/desserts/${recipeId}`);
-  if (!res.ok) {
-    // handle the case where the dessert is not found
-    return { notFound: true };
-  }
-  const data = await res.json();
-
+  const res = await axios.get(`http://localhost:3000/api/desserts/${recipeId}`);
+  const dessert = await res.data;
   return {
     props: {
-      dessert: data,
+      dessert,
     },
   };
 }
-
