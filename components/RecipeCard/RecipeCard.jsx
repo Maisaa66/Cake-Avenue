@@ -3,9 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faPencil } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
+import Router from "next/router";
+
 const RecipeCard = (props) => {
-  const { dessert } = props;
+  const { dessert, deleteRecipe } = props;
   const img = dessert.image;
+
+
+
   return (
     <div
       className="card m-3 bg-transparent shadow"
@@ -38,11 +44,13 @@ const RecipeCard = (props) => {
               icon={faTrash}
               style={{ color: "#dc3545", height: "22px", cursor: "pointer" }}
               className="mx-3"
+              onClick={()=>deleteRecipe(dessert.id)}
             />
             <FontAwesomeIcon
               icon={faPencil}
               style={{ color: "#dc3545", height: "22px", cursor: "pointer" }}
-            />
+              onClick={() => Router.push(`/recipes/editPost?id=${dessert.id}`)}
+              />
           </div>
         </div>
       </div>
