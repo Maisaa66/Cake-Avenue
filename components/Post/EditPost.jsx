@@ -39,7 +39,7 @@ const EditPost = (props) => {
               className="card-title fs-1 mb-3"
               style={{ fontFamily: "var(--textFont)" }}
             >
-              Create Recipe
+              Update Recipe
             </h5>
             <div className="mb-3">
               <h6
