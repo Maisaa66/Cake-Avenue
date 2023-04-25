@@ -5,12 +5,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faPencil } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import Router from "next/router";
+import { useSession } from "next-auth/react";
 
 const RecipeCard = (props) => {
   const { dessert, deleteRecipe } = props;
   const img = dessert.image;
 
-
+  const { data: session } = useSession();
 
   return (
     <div
@@ -39,19 +40,23 @@ const RecipeCard = (props) => {
           <Link href={`/recipes/${dessert.id}`} className="btn btn-danger">
             Show Recipe
           </Link>
-          <div className="d-flex align-items-center">
-            <FontAwesomeIcon
-              icon={faTrash}
-              style={{ color: "#dc3545", height: "22px", cursor: "pointer" }}
-              className="mx-3"
-              onClick={()=>deleteRecipe(dessert.id)}
-            />
-            <FontAwesomeIcon
-              icon={faPencil}
-              style={{ color: "#dc3545", height: "22px", cursor: "pointer" }}
-              onClick={() => Router.push(`/recipes/editPost?id=${dessert.id}`)}
+          {session && (
+            <div className="d-flex align-items-center">
+              <FontAwesomeIcon
+                icon={faTrash}
+                style={{ color: "#dc3545", height: "22px", cursor: "pointer" }}
+                className="mx-3"
+                onClick={() => deleteRecipe(dessert.id)}
               />
-          </div>
+              <FontAwesomeIcon
+                icon={faPencil}
+                style={{ color: "#dc3545", height: "22px", cursor: "pointer" }}
+                onClick={() =>
+                  Router.push(`/recipes/editPost?id=${dessert.id}`)
+                }
+              />
+            </div>
+          )}
         </div>
       </div>
     </div>
