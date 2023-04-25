@@ -4,8 +4,11 @@ import img from "../../public/Images/logo.png";
 import Image from "next/image";
 import styles from "./Navbar.module.css"
 import { useRouter } from "next/router";
+import { useSession, signIn, signOut } from "next-auth/react";
+
 const Navbar = () => {
   const router = useRouter();
+  const { data: session } = useSession();
 
   const isActive = (pathname) => {
     return router.pathname === pathname ? 'active' : '';
@@ -51,7 +54,7 @@ const Navbar = () => {
           </div>
           <div className="d-flex justify-content-evenly">
             <Link className="btn btn-danger mx-2" style={{borderRadius:"20px"}} href="/signup">Sign up</Link>
-            <Link className="btn btn-outline-danger" href="/login" style={{borderRadius:"20px"}}>Login</Link>
+            {!session ? <Link className="btn btn-outline-danger" href="/api/auth/signin" style={{borderRadius:"20px"}}>Login</Link> : <Link className="btn btn-outline-danger" href="/api/auth/signout" style={{borderRadius:"20px"}}>Logout</Link>}
 
           </div>
         </div>
