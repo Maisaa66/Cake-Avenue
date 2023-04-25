@@ -2,6 +2,7 @@ import RecipeCard from "@/components/RecipeCard/RecipeCard";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import { useSession } from "next-auth/react";
 
 // const index = ({desserts}) => {
 //     return (
@@ -13,6 +14,7 @@ import Link from "next/link";
 
 const index = () => {
   const [desserts, setDesserts] = useState([]);
+  const { data: session } = useSession();
 
   async function fetchData() {
     const response = await axios.get("/api/desserts");
@@ -30,12 +32,12 @@ const index = () => {
   };
   useEffect(() => {
     fetchData();
-  },[]);
+  }, []);
 
   return (
     <div>
       <div className="d-flex justify-content-center mt-3">
-        <Link href="/recipes/createPost" className="btn btn-outline-danger rounded-start fs-3" style={{fontFamily:"var(--textFont)"}} >Add Post </Link>
+        {session && <Link href="/recipes/createPost" className="btn btn-outline-danger rounded-start fs-3" style={{ fontFamily: "var(--textFont)" }} >Add Post </Link> }
         {/* <p className="btn btn-danger rounded-end fs-3">+</p> */}
       </div>
       <div className="d-flex flex-wrap justify-content-center">
